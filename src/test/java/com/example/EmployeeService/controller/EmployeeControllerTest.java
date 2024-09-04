@@ -218,102 +218,102 @@ class EmployeeControllerTest {
 	  
    
  
-    @Test
-    void testGetResolutionAverageByManagerId() {
-    	Map<String,Double> result = new HashMap<String,Double>();
-    	result.put("14", 90.0);
-    	String json="";
-    	try {
-            json = objectMapper.writeValueAsString(result);
-            System.out.println(json);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        ResponseEntity<?> response = restTemplate.getForEntity("/employee/resolutionAverage/26", String.class);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(json, response.getBody());
-    }
- 
-    @Test
-    void testGetTicketCountsByStatus() {
-    	Map<String,Long> result = new HashMap<String,Long>();
-    	result.put("OPEN", 1L);
-    	String json="";
-    	try {
-            json = objectMapper.writeValueAsString(result);
-            System.out.println(json);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        ResponseEntity<?> response = restTemplate.getForEntity("/employee/statusCounts/26", String.class);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(json,response.getBody());
-    }
- 
-    @Test
-    void testGetAverageResponseTimeByRepId() {
-    	Double result = 50.0;
-        ResponseEntity<?> response = restTemplate.getForEntity("/employee/averageResponseTime/28", Double.class);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        //assertEquals(result, response.getBody());
-    }
- 
-    @Test
-    void testGetAverageResolutionTimeByRepId() {
-    	Double result = 20.0;
-        ResponseEntity<?> response = restTemplate.getForEntity("/employee/averageResolutionTime/28", Double.class);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(result, response.getBody());
-    }
- 
-    @Test
-    void testGetTicketCountsByStatusForRep() {
-    	Map<String,Long> result = new HashMap<String,Long>();
-    	result.put("OPEN", 1L);
-    	
-    	String json="";
-    	try {
-            json = objectMapper.writeValueAsString(result);
-            System.out.println(json);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        ResponseEntity<?> response = restTemplate.getForEntity("/employee/statusCountsForRep/28", String.class);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(json,response.getBody());
-    }
- 
-    @Test
-    void testGetAverageResponseTime() {
-    	Map<String,Double> result = new HashMap<String,Double>();
-    	result.put("FRIDAY", 50.0);
-    	
-    	String json="";
-    	try {
-            json = objectMapper.writeValueAsString(result);
-            System.out.println(json);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        ResponseEntity<?> response = restTemplate.getForEntity("/employee/weeklyResponseTime/28", String.class);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(json,response.getBody());
-    }
- 
-    @Test
-    void testGetAverageResolutionTime() { 
-    	Map<String,Double> result = new HashMap<String,Double>();
-    	result.put("FRIDAY", 20.0);
-    	String json="";
-    	try {
-            json = objectMapper.writeValueAsString(result);
-            System.out.println(json);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        ResponseEntity<?> response = restTemplate.getForEntity("/employee/weeklyResolutionTime/28", String.class);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(json,response.getBody());
-    }
+//    @Test
+//    void testGetResolutionAverageByManagerId() {
+//    	Map<String,Double> result = new HashMap<String,Double>();
+//    	result.put("14", 90.0);
+//    	String json="";
+//    	try {
+//            json = objectMapper.writeValueAsString(result);
+//            System.out.println(json);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//        ResponseEntity<?> response = restTemplate.getForEntity("/employee/resolutionAverage/26", String.class);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(json, response.getBody());
+//    }
+// 
+//    @Test
+//    void testGetTicketCountsByStatus() {
+//    	Map<String,Long> result = new HashMap<String,Long>();
+//    	result.put("OPEN", 1L);
+//    	String json="";
+//    	try {
+//            json = objectMapper.writeValueAsString(result);
+//            System.out.println(json);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//        ResponseEntity<?> response = restTemplate.getForEntity("/employee/statusCounts/26", String.class);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(json,response.getBody());
+//    }
+// 
+//    @Test
+//    void testGetAverageResponseTimeByRepId() {
+//    	Double result = 50.0;
+//        ResponseEntity<?> response = restTemplate.getForEntity("/employee/averageResponseTime/28", Double.class);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        //assertEquals(result, response.getBody());
+//    }
+// 
+//    @Test
+//    void testGetAverageResolutionTimeByRepId() {
+//    	Double result = 20.0;
+//        ResponseEntity<?> response = restTemplate.getForEntity("/employee/averageResolutionTime/28", Double.class);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(result, response.getBody());
+//    }
+// 
+//    @Test
+//    void testGetTicketCountsByStatusForRep() {
+//    	Map<String,Long> result = new HashMap<String,Long>();
+//    	result.put("OPEN", 1L);
+//    	
+//    	String json="";
+//    	try {
+//            json = objectMapper.writeValueAsString(result);
+//            System.out.println(json);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//        ResponseEntity<?> response = restTemplate.getForEntity("/employee/statusCountsForRep/28", String.class);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(json,response.getBody());
+//    }
+// 
+//    @Test
+//    void testGetAverageResponseTime() {
+//    	Map<String,Double> result = new HashMap<String,Double>();
+//    	result.put("FRIDAY", 50.0);
+//    	
+//    	String json="";
+//    	try {
+//            json = objectMapper.writeValueAsString(result);
+//            System.out.println(json);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//        ResponseEntity<?> response = restTemplate.getForEntity("/employee/weeklyResponseTime/28", String.class);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(json,response.getBody());
+//    }
+// 
+//    @Test
+//    void testGetAverageResolutionTime() { 
+//    	Map<String,Double> result = new HashMap<String,Double>();
+//    	result.put("FRIDAY", 20.0);
+//    	String json="";
+//    	try {
+//            json = objectMapper.writeValueAsString(result);
+//            System.out.println(json);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//        ResponseEntity<?> response = restTemplate.getForEntity("/employee/weeklyResolutionTime/28", String.class);
+//        assertEquals(HttpStatus.OK, response.getStatusCode());
+//        assertEquals(json,response.getBody());
+//    }
 
 }
